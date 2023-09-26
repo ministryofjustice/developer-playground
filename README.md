@@ -6,13 +6,108 @@
 [![License](https://img.shields.io/github/license/ministryofjustice/developer-playground?style=for-the-badge)](https://github.com/ministryofjustice/developer-playground/blob/php/LICENSE)
 
 <br>
-<br>
 
-Multi-language developer resource used to assist learning and new code exploration.
+Multi-language developer resource used to assist learning and new-tech exploration.
 
 </div>
-
-<br>
 <br>
 
+This project is home to many subprojects. Subprojects are essentially test beds for programming languages and contain
+what is widely deemed as best practice to achieve good coding.
+
+New subprojects can be added at any time although please be aware; there is a process to assist in keeping a good
+workflow. Current subprojects include:
+
+* Ruby on Rails
+* PHP - Laravel
+* .NET
+* Python
+* NodeJS
+* VueJS
+
+Getting involved with your language of choice is a great idea, you can showcase your knowledge as an early adopter and
+set the bar for developers of all levels to start experimenting.
+It is heavily encouraged to 'weigh-in' on pull requests to offer advice and begin discussions, you never know, you might
+ignite a spark in the mind of a young programmer.
+
+### Orphan branches
+
+Each language branch contained in this project has been orphaned. An orphan branch is a term commonly used in version
+control systems like Git. It refers to a branch that has no parent or history connection to other branches in the
+repository. In other words, an orphan branch is created independently and does not share a common commit history with
+any other branch. This branch starts fresh with no commits, and any changes made to it are isolated from the rest of the
+project's history until the branch is merged or connected to another branch.
+
+An orphan branch is created by using the `git checkout --orphan` command followed by the branch name. For example:
+
+```bash
+git checkout --orphan <branch_name>
+```
+
+Orphan branches are locked under branch rules and will need pull requests, in the normal way, to add features.
+
+## Community guidelines
+
+Collaboration necessitates recognising that contributors may possess varying levels of expertise and comprehension. It's crucial to embrace the diverse perspectives, experiences, and skills our colleagues bring to the table, as this collective effort can facilitate learning and illuminate previously obscure areas.
+
+We should actively promote even the smallest steps toward positive progress and stand ready to provide support to our colleagues during difficult times.  
+
+### Failure in the pursuit of success
+
+Failure and success are two contrasting outcomes or states that often play a significant role in shaping our lives and
+experiences. Here's a breakdown of each concept:
+
+#### Failure
+
+**Learning opportunity:** Failure is often seen as a valuable learning experience. It provides insights into what didn't
+work and can lead to personal growth and development.
+
+**Emotional impact:** Failure can be emotionally challenging. It may lead to feelings of disappointment, frustration, or
+even sadness. However, it can also build resilience and the ability to cope with setbacks.
+
+**Motivation:** Failure can serve as motivation to improve and try again. Many successful individuals have faced multiple
+failures before achieving their goals.
+
+**Risk-taking:** Failure is an inherent part of taking risks. Without the possibility of failure, there is often limited
+room for innovation and growth.
+
+#### Success
+
+**Recognition:** Success is often accompanied by recognition and praise from others, which can boost self-esteem and
+confidence.
+
+**Emotional impact:** Success can bring feelings of happiness, satisfaction, and pride. It can also provide a sense of
+accomplishment and validation.
+
+**Motivation:** Success can serve as motivation to continue striving for excellence and setting higher goals.
+
+It's important to note that failure and success are not always mutually exclusive. Many successful individuals have
+experienced failure at various points in their lives, and failure can be a stepping stone to eventual success.
+Additionally, what is considered a failure or success can be highly subjective and dependent on one's perspective and
+goals. Ultimately, both failure and success are part of the journey of life, and how we perceive and respond to them can
+shape our future experiences.
+
+
+## Conventions
+
+> Conventions are created by community so please do offer your thoughts
+> in [Discussions](https://github.com/ministryofjustice/developer-playground/discussions/2)
+
+Headings below offer some support to help us with a little house-keeping.
+
+### Branch names (WiP)
+
+This repository houses multiple languages which can make viewing branches a little tricky. Lets subscribe to the
+following convention:
+
+1. Begin branch names with the language your code is intended
+2. Follow with a dash `-` and the word `apply`
+3. Complete with a forward slash `/`
+4. Next, write your branch name as you would normally
+
+You can model it like so:
+
+```
+ruby-apply/my-awesome-new-ruby-branch
+```
 
