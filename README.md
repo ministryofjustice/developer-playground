@@ -21,8 +21,9 @@ workflow. Current subprojects include:
 * Ruby on Rails
 * PHP - Laravel
 * .NET
+* Java
 * Python
-* NodeJS
+* Node.js
 * VueJS
 
 Getting involved with your language of choice is a great idea; you can showcase your knowledge as an early adopter and
