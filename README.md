@@ -18,13 +18,17 @@ what is widely deemed as best practice to achieve good coding.
 New subprojects can be added at any time, although please be aware there is a process to assist in keeping a good
 workflow. Current subprojects include:
 
-* Ruby on Rails
-* PHP - Laravel
-* .NET
-* Java
-* Python
-* Node.js
-* VueJS
+<div align="center">
+
+|  |  |
+| ------------- | ------------- |
+| [![Ruby Icon]][Ruby Link] | [![PHP Icon]][PHP Link]  |
+| [![DOTNET Icon]][DOTNET Link]  | [![Java Icon]][Java Link]  |
+| [![Python Icon]][Python Link]  | [![Node Icon]][Node Link]  |
+| [![VueJS Icon]][VueJS Link]  |   |
+
+</div>
+
 
 Getting involved with your language of choice is a great idea; you can showcase your knowledge as an early adopter and
 set the bar for developers of all levels to start experimenting.
@@ -114,4 +118,35 @@ You can model it like so:
 ```
 ruby-apply/my-awesome-new-ruby-branch
 ```
+
+
+<!-- Ruby -->
+[Ruby Link]: https://github.com/ministryofjustice/developer-playground/tree/ruby 'Click to view the Ruby on Rails application.'
+[Ruby Icon]: https://badgen.net/badge/Ruby%20on%20Rails/%20/f1f2f2?scale=2&labelColor=D30001&icon=ruby
+
+<!-- PHP -->
+[PHP Link]: https://github.com/ministryofjustice/developer-playground/tree/php 'Click to view the Laravel application.'
+[PHP Icon]: https://badgen.net/badge/PHP/Laravel/fb503b?scale=2&labelColor=484C89&icon=php
+
+<!-- DOTNET -->
+[DOTNET Link]: https://github.com/ministryofjustice/developer-playground/tree/dotnet 'Click to view the .NET application.'
+[DOTNET Icon]: https://badgen.net/badge/Microsoft/.NET/512bd4?scale=2&labelColor=09a3ab
+
+<!-- Java -->
+[Java Link]: https://github.com/ministryofjustice/developer-playground/tree/java 'Click to view the Java application.'
+[Java Icon]: https://badgen.net/badge/Java/Spring/589133?scale=2&labelColor=f89820
+
+<!-- Python -->
+[Python Link]: https://github.com/ministryofjustice/developer-playground/tree/python 'Click to view the Python application.'
+[Python Icon]: https://badgen.net/badge/Python/%20/FFDE57?scale=2&labelColor=4584B6
+
+<!-- Node -->
+[Node Link]: https://github.com/ministryofjustice/developer-playground/tree/node 'Click to view the Node.js application.'
+[Node Icon]: https://badgen.net/badge/Node.js/%20/77b85b?scale=2&labelColor=3c873b&icon=npm
+
+<!-- VueJS -->
+[VueJS Link]: https://github.com/ministryofjustice/developer-playground/tree/vuejs 'Click to see the VueJS application.'
+[VueJS Icon]: https://badgen.net/badge/Vue.js/%20/41b883?scale=2&labelColor=34495e
+
+
 
