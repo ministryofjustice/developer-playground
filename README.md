@@ -71,6 +71,10 @@ Additionally, what is considered a failure or success can be highly subjective a
 goals. Ultimately, both failure and success are part of the journey of life, and how we perceive and respond to them can
 shape our future experiences.
 
+---
+
+## Coding and structure
+
 ### Orphan branches
 
 Each language branch contained in this project has been orphaned. An orphan branch is a term commonly used in version
