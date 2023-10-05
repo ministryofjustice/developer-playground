@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "php": "^7.4|^8.0",
+        "php": "^8.0",
         "alphagov/notifications-php-client": "^3.2",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",

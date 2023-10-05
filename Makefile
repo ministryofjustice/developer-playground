@@ -1,13 +1,12 @@
-.PHONY: dshell
+.PHONY: d-compose
 
-d-compose:
-	docker-compose up -d nginx phpmyadmin
-	docker-compose run --service-ports --rm --entrypoint=bash php
+d-compose: d-shell
+	docker compose up -d nginx phpmyadmin
+	docker compose run --service-ports --rm --entrypoint=bash php
 
-dshell:
+d-shell:
 	[ -f "./.env" ] || cp .env.example .env
 	echo "http://127.0.0.1:8080/" > public/hot
-	make d-compose
 
 setup:
 	composer install
@@ -17,7 +16,7 @@ setup:
 	php artisan notify:restart
 
 restart:
-	docker-compose down
+	docker compose down
 	make d-compose
 
 db-migrate:

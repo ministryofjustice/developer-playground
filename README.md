@@ -21,6 +21,23 @@ The core purpose of the TPC (Tooling Procurement Centre) is to aggregate data re
 digital teams and display exploratory reports and structured data for administrative review, financial quantification
 and high-confidence decision-making.
 
+## A note on lock files
+
+The Tooling Procurement Centre does not include `composer.lock` file in sourcecode. The reason is a difference in
+perception and one that is up for debate.
+
+Imagine our CI environment is ironclad, we have multiple checks firing off in GitHub Actions and every inch of our code
+is monitored by tests.
+
+In this scenario, why do we deprive ourselves of security updates in package managers? Why do we prevent security
+updates from being installed at the CI stage?
+
+The short answer is, we shouldn't. We should rest assured and feel safe that our CI checks and tests will protect and
+inform us, should security updates impact our applications ability to function.
+
+For this reason, we DO NOT push `composer.lock` to the repository. We use TDD to it's fullest and allow security updates
+to flow, as and when they are provided.
+
 ## Installation
 
 The configuration uses multiple Docker containers and volumes to manage ephemeral assets and caching. The view is to
@@ -30,9 +47,11 @@ frontend assets. The focus for this project has been, primarily, on creating a f
 ***MacOS example***
 
 1. `cd ~/`
-2. `git clone https://github.com/ministryofjustice/tooling-procurement-centre`
-3. `cd tooling-procurement-centre && make dshell`
-4. In your new docker shell, run: `make setup`
+2. `git clone https://github.com/ministryofjustice/developer-playground.git tooling-procurement-centre`
+3. `cd tooling-procurement-centre`
+4. `git checkout php`
+4. `make`
+4. In the new docker shell, run: `make setup`
 5. `exit`
 6. `make restart`
 7. Visit http://127.0.0.1:8000/
