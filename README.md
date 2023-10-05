@@ -7,26 +7,24 @@
 
 <br>
 
-Multi-language developer resource used to assist learning and new-tech exploration.
+**Multi-language developer resource used to assist learning and new-tech exploration:**
+
+[![Ruby Icon]][Ruby Link] &nbsp; [![PHP Icon]][PHP Link] <br>
+[![DOTNET Icon]][DOTNET Link] &nbsp; [![Java Icon]][Java Link] <br>
+[![Python Icon]][Python Link] &nbsp; [![Node Icon]][Node Link] &nbsp; [![VueJS Icon]][VueJS Link]
 
 </div>
 
-<br>
 
 This project is home to many subprojects. Subprojects are essentially test beds for programming languages and contain
 what is widely deemed as best practice to achieve good coding.
 
-New subprojects can be added at any time, although please be aware there is a process to assist in keeping a good
-workflow. Current subprojects include:
+New subprojects can be added at any time, Follow this process:
 
-<div align="center">
-
- [![Ruby Icon]][Ruby Link] &nbsp; [![PHP Icon]][PHP Link] <br>
- [![DOTNET Icon]][DOTNET Link] &nbsp; [![Java Icon]][Java Link] <br>
- [![Python Icon]][Python Link] &nbsp; [![Node Icon]][Node Link] &nbsp; [![VueJS Icon]][VueJS Link] 
-
-</div>
-
+1. Decide your programming language name, one word is best
+2. Create an [orphaned branch](#orphan-branches), called the language name
+3. Add a README.md, simply copy from another branch and modify to your need
+4. 
 
 Getting involved with your language of choice is a great idea; you can showcase your knowledge as an early adopter and
 set the bar for developers of all levels to start experimenting.
@@ -120,7 +118,7 @@ ruby-apply/my-awesome-new-ruby-branch
 
 <!-- Ruby -->
 [Ruby Link]: https://github.com/ministryofjustice/developer-playground/tree/ruby 'Click to view the Ruby on Rails application.'
-[Ruby Icon]: https://badgen.net/badge/Ruby%20on%20Rails/%20/c00300?scale=2&labelColor=D30001&icon=ruby
+[Ruby Icon]: https://badgen.net/badge/Ruby/on%20Rails/D30001?scale=2&labelColor=CC342D&icon=ruby
 
 <!-- PHP -->
 [PHP Link]: https://github.com/ministryofjustice/developer-playground/tree/php 'Click to view the Laravel application.'
