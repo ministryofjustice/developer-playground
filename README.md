@@ -120,7 +120,7 @@ ruby-apply/my-awesome-new-ruby-branch
 
 <!-- Ruby -->
 [Ruby Link]: https://github.com/ministryofjustice/developer-playground/tree/ruby 'Click to view the Ruby on Rails application.'
-[Ruby Icon]: https://badgen.net/badge/Ruby%20on%20Rails/%20/f1f2f2?scale=2&labelColor=D30001&icon=ruby
+[Ruby Icon]: https://badgen.net/badge/Ruby%20on%20Rails/%20/c00300?scale=2&labelColor=D30001&icon=ruby
 
 <!-- PHP -->
 [PHP Link]: https://github.com/ministryofjustice/developer-playground/tree/php 'Click to view the Laravel application.'
