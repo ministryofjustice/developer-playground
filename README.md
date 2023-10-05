@@ -24,7 +24,7 @@ workflow. Current subprojects include:
  [![Ruby Icon]][Ruby Link] &nbsp; [![PHP Icon]][PHP Link] 
  [![DOTNET Icon]][DOTNET Link] &nbsp; [![Java Icon]][Java Link]  
  [![Python Icon]][Python Link] &nbsp; [![Node Icon]][Node Link]  
- [![VueJS Icon]][VueJS Link]     
+ [![VueJS Icon]][VueJS Link] 
 
 </div>
 
