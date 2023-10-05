@@ -21,3 +21,8 @@
 
 
 # Installation
+
+## Requirements
+
+* Docker
+* 
