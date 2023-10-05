@@ -21,10 +21,9 @@ workflow. Current subprojects include:
 
 <div align="center">
 
- [![Ruby Icon]][Ruby Link] &nbsp; [![PHP Icon]][PHP Link] 
- [![DOTNET Icon]][DOTNET Link] &nbsp; [![Java Icon]][Java Link]  
- [![Python Icon]][Python Link] &nbsp; [![Node Icon]][Node Link]  
- [![VueJS Icon]][VueJS Link] 
+ [![Ruby Icon]][Ruby Link] &nbsp; [![PHP Icon]][PHP Link] <br>
+ [![DOTNET Icon]][DOTNET Link] &nbsp; [![Java Icon]][Java Link] <br>
+ [![Python Icon]][Python Link] &nbsp; [![Node Icon]][Node Link] &nbsp; [![VueJS Icon]][VueJS Link] 
 
 </div>
 
