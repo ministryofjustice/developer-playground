@@ -9,9 +9,9 @@
 
 **Multi-language developer resource used to assist learning and new-tech exploration:**
 
-[![Ruby Icon]][Ruby Link] &nbsp; [![PHP Icon]][PHP Link] <br>
-[![DOTNET Icon]][DOTNET Link] &nbsp; [![Java Icon]][Java Link] <br>
-[![Python Icon]][Python Link] &nbsp; [![Node Icon]][Node Link] &nbsp; [![VueJS Icon]][VueJS Link]
+[![Ruby Icon]][Ruby Link] &nbsp; [![PHP Icon]][PHP Link] &nbsp; [![DOTNET Icon]][DOTNET Link]
+
+[![Java Icon]][Java Link] &nbsp; [![Python Icon]][Python Link] &nbsp; [![Node Icon]][Node Link] &nbsp; [![VueJS Icon]][VueJS Link]
 
 </div>
 
