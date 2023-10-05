@@ -1,0 +1,36 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "npx mix",
+        "watch": "npx mix watch",
+        "watch-poll": "npx mix watch -- --watch-options-poll=1000",
+        "hot": "npx mix watch --hot",
+        "prod": "npm run production",
+        "production": "npx mix --production"
+    },
+    "devDependencies": {
+        "@inertiajs/inertia": "^0.10.1",
+        "@inertiajs/inertia-vue": "^0.7.2",
+        "autoprefixer": "^10.4.0",
+        "browser-sync": "^2.27.7",
+        "browser-sync-webpack-plugin": "^2.3.0",
+        "eslint": "^8.3.0",
+        "eslint-plugin-vue": "^8.1.1",
+        "govuk-frontend": "^3.14.0",
+        "jquery": "^3.6.0",
+        "laravel-mix": "^6.0.39",
+        "lodash": "^4.17.21",
+        "popper.js": "^1.16.1",
+        "portal-vue": "^2.1.7",
+        "resolve-url-loader": "^4.0.0",
+        "sass": "^1.43.4",
+        "sass-loader": "^12.3.0",
+        "vue": "^2.6.14",
+        "vue-meta": "^2.4.0",
+        "vue-template-compiler": "^2.6.14"
+    },
+    "dependencies": {
+        "chart.js": "^3.6.2"
+    }
+}

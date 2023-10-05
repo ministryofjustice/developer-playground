@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tp-centre-dev
+spec:
+  # strategy:
+  #   rollingUpdate:
+  #     maxSurge: 10%
+  #     maxUnavailable: 10%
+  selector:
+    matchLabels:
+      app: tp-centre-dev
+  template:
+    metadata:
+      labels:
+        app: tp-centre-dev
+    spec:
+      # initContainers:
+      #   - name: db-migrations
+      #     image: pingcrm-fpm:latest
+      #     command:
+      #       - "echo"
+      #       # - php
+      #     args:
+      #       - "123"
+      #       # - artisan
+      #       # - db:migrate
+      containers:
+        - name: tp-centre-dev-nginx
+          image: tp-centre-nginx:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 80
+        - name: tp-centre-dev-fpm
+          image: tp-centre-fpm:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 9000

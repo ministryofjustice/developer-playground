@@ -1,0 +1,73 @@
+version: "3.8"
+
+volumes:
+    node_modules: ~
+    public: ~
+    mariadb_data: ~
+
+services:
+    nginx:
+        image: nginx
+        volumes:
+            - ./resources/ops/docker/dev/server.conf:/etc/nginx/conf.d/default.conf
+            - public:/var/www/html
+        ports:
+            - "8000:80"
+        depends_on:
+            - php
+            - node
+
+    node:
+        image: node:16
+        working_dir: /node
+        entrypoint: make
+        command: node-assets
+        ports:
+            - "8080:8080"
+        volumes:
+            - node_modules:/node/node_modules
+            - public:/node/public
+            - ./Makefile:/node/Makefile
+            - ./artisan:/node/artisan
+            - ./resources:/node/resources
+            - ./package.json:/node/package.json
+            - ./tailwind.config.js:/node/tailwind.config.js
+            - ./webpack.mix.js:/node/webpack.mix.js
+
+    php:
+        build:
+            context: .
+            dockerfile: ./resources/ops/docker/dev/Dockerfile
+            target: dev
+        volumes:
+            - .:/var/www/html
+        env_file:
+            - .env
+        depends_on:
+            - mariadb
+        links:
+            - mariadb
+
+    mariadb:
+        image: mariadb:10
+        healthcheck:
+            test: ["CMD-SHELL", "bash", "-c", "echo > /dev/tcp/localhost/3306"]
+            interval: 1s
+        volumes:
+            - mariadb_data:/var/lib/mysql
+        environment:
+            MYSQL_RANDOM_ROOT_PASSWORD: "true"
+            MYSQL_USER: ${DB_USERNAME}
+            MYSQL_PASSWORD: ${DB_PASSWORD}
+            MYSQL_DATABASE: ${DB_DATABASE}
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        environment:
+            - PMA_HOST=mariadb
+        depends_on:
+            - mariadb
+        ports:
+            - "9191:80"
+        links:
+            - mariadb

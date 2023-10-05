@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tpc-queue-worker
+spec:
+  strategy:
+    rollingUpdate:
+      maxSurge: 50%
+      maxUnavailable: 25%
+  replicas: 5
+  selector:
+    matchLabels:
+      app: tpc-queue-worker
+  template:
+    metadata:
+      labels:
+        app: tpc-queue-worker
+    spec:
+      containers:
+        - name: fpm
+          imagePullPolicy: Never
+          resources: {}
+          image: tp-centre-nginx
+          ports:
+            - containerPort: 9000

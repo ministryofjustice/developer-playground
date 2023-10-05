@@ -1,0 +1,63 @@
+.tooling-timeline {
+
+    tbody > tr:hover &__date {
+        position: relative;
+
+        &:before {
+            content: "\25ba";
+            font-size: 28px;
+            height: 42px;
+            position: absolute;
+            color: #2d70b7;
+            top: 23%;
+            right: -20px;
+        }
+    }
+
+
+    &__item {
+        position: relative;
+        vertical-align: top !important;
+        min-width: 85px;
+
+        &:before {
+            content: " ";
+            width: 4px;
+            height: 100%;
+            position: absolute;
+            background-color: #b1b4b6;
+            top: 15px;
+            left: 20px;
+            z-index: -1;
+        }
+    }
+
+    &__date, &__date-year {
+        display: inline-block;
+        background-color: #2d70b7;
+        color: #ffffff;
+        padding: 8px 12px;
+        text-align: right;
+        z-index: 1;
+        line-height: 0.9;
+        min-width: 65px;
+    }
+
+    &__date-year {
+        display: block;
+        background-color: #b1b4b6;
+        text-align: left;
+        text-indent: 12px;
+        margin-right: -15px;
+        padding: 4px 12px;
+    }
+
+    .govuk-table__cell {
+        vertical-align: middle;
+        border-bottom: none;
+    }
+
+    .govuk-table__row:last-child > td:first-child:before {
+        content: none;
+    }
+}
