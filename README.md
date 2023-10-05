@@ -15,16 +15,20 @@
 
 </div>
 
+---
 
-This project is home to many subprojects. Subprojects are essentially test beds for programming languages and contain
+Developer Playground is home to many subprojects. Subprojects are essentially test beds for programming languages and contain
 what is widely deemed as best practice to achieve good coding.
 
-New subprojects can be added at any time, Follow this process:
+New subprojects can be added by following this process:
 
 1. Decide your programming language name, one word is best
-2. Create an [orphaned branch](#orphan-branches), called the language name
-3. Add a README.md, simply copy from another branch and modify to your need
-4. 
+2. Create your icon [using an example like this](https://badgen.net/badge/Lang/other-text/grey?scale=2&labelColor=000000&icon=git) - modify the URL to meet need
+3. [Contact an admin](https://github.com/orgs/ministryofjustice/teams/developer-playground-administrators) giving details of the language name and icon URL
+
+> Please note that Developer Playground has rules in place to protect content and users. An administrator is needed to bypass some of these rules to create a new language branch.
+
+> If you are interested in helping to administer, please do reach out.
 
 Getting involved with your language of choice is a great idea; you can showcase your knowledge as an early adopter and
 set the bar for developers of all levels to start experimenting.
