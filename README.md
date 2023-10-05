@@ -10,6 +10,7 @@
 Multi-language developer resource used to assist learning and new-tech exploration.
 
 </div>
+
 <br>
 
 This project is home to many subprojects. Subprojects are essentially test beds for programming languages and contain
@@ -20,12 +21,10 @@ workflow. Current subprojects include:
 
 <div align="center">
 
-|  |  |
-| ------------- | ------------- |
-| [![Ruby Icon]][Ruby Link] | [![PHP Icon]][PHP Link]  |
-| [![DOTNET Icon]][DOTNET Link]  | [![Java Icon]][Java Link]  |
-| [![Python Icon]][Python Link]  | [![Node Icon]][Node Link]  |
-| [![VueJS Icon]][VueJS Link]  |   |
+ [![Ruby Icon]][Ruby Link] &nbsp; [![PHP Icon]][PHP Link] 
+ [![DOTNET Icon]][DOTNET Link] &nbsp; [![Java Icon]][Java Link]  
+ [![Python Icon]][Python Link] &nbsp; [![Node Icon]][Node Link]  
+ [![VueJS Icon]][VueJS Link] 
 
 </div>
 
