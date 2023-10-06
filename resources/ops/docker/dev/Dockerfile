@@ -61,7 +61,7 @@ RUN make test
 ###
 
 
-FROM node:16 AS assets-build
+FROM node:20.8 AS assets-build
 
 WORKDIR /code
 COPY . /code/
@@ -71,7 +71,7 @@ RUN npm run production
 ###
 
 
-FROM nginx:1.19-alpine AS nginx
+FROM nginx:1.25-alpine AS nginx
 
 COPY vhost-prod.conf /etc/nginx/conf.d/default.conf
 COPY --from=assets-build /code/public /var/www/html/
