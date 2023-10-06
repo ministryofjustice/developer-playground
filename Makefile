@@ -1,23 +1,24 @@
-.PHONY: d-compose
+.PHONY: d-shell
 
-d-compose: d-shell
+d-compose:
 	docker compose up -d nginx phpmyadmin
 	docker compose run --service-ports --rm --entrypoint=bash php
 
-d-shell:
-	[ -f "./.env" ] || cp .env.example .env
-	echo "http://127.0.0.1:8080/" > public/hot
+d-shell: setup d-compose
 
 setup:
-	composer install
-	php artisan key:generate
-	php artisan migrate
-	php artisan db:seed
-	php artisan notify:restart
+	@chmod +x ./bin/*
+	@[ -f "./.env" ] || cp .env.example .env
+	@echo "http://127.0.0.1:8080/" > public/hot
+	@docker compose up -d nginx phpmyadmin
+	@docker compose exec php /var/www/html/bin/setup.sh
+	@./bin/restart.sh
 
 restart:
-	docker compose down
-	make d-compose
+	@docker compose down
+	@php artisan notify:restart
+	@make d-compose
+
 
 db-migrate:
 	php artisan db:wipe
@@ -27,9 +28,13 @@ db-migrate:
 test:
 	php artisan test
 
+down:
+	docker compose down -v
+
 # Remove ignored git files
 clean:
 	@if [ -d ".git" ]; then git clean -xdf --exclude ".env" --exclude ".idea"; fi
+	@clear
 
 node-assets:
 	npm install
