@@ -23,11 +23,11 @@ and high-confidence decision-making.
 
 ## A note on lock files
 
-The Tooling Procurement Centre does not include `composer.lock` file in sourcecode. The reason is a difference in
+The Tooling Procurement Centre does not allow `.lock` files in sourcecode. The reason is a difference in
 perception and one that is up for debate.
 
 Imagine our CI environment is ironclad, we have multiple checks firing off in GitHub Actions and every inch of our code
-is monitored by tests.
+is monitored by our **T**est **D**riven **D**evelopment (TDD).
 
 In this scenario, why do we deprive ourselves of security updates in package managers? Why do we prevent security
 updates from being installed at the CI stage?
@@ -44,21 +44,26 @@ The configuration uses multiple Docker containers and volumes to manage ephemera
 speed up and strengthen the environment for development. The result is a faster loading time with hot reloading of
 frontend assets. The focus for this project has been, primarily, on creating a fluid development environment.
 
-***MacOS example***
+***OSX example***
 
 1. `cd ~/`
 2. `git clone https://github.com/ministryofjustice/developer-playground.git tooling-procurement-centre`
 3. `cd tooling-procurement-centre`
 4. `git checkout php`
-4. `make`
-4. In the new docker shell, run: `make setup`
-5. `exit`
-6. `make restart`
-7. Visit http://127.0.0.1:8000/
+5. `make setup`
+6. Asset compilation will take around 2 minutes *
+7. When ready, visit: http://127.0.0.1:8000/
 
-Nb. steps 5 and 6 are necessary and fix a bug that occurs due to Laravel's APP_KEY being generated on the fly, and the
-systems' inability to read environment variables that change after init. When we restart the containers the newly
-generated APP_KEY loads correctly.
+Nb. *our node container is responsible for compiling assets. Compilation can take a couple of minutes to complete.  
+
+Once you are happy and understand the installation process, try running this consolidated command
+
+```bash
+cd ~/ && \
+git clone https://github.com/ministryofjustice/developer-playground.git tooling-procurement-centre && \
+cd tooling-procurement-centre && git checkout php && \
+make setup 
+```
 
 ### Useful commands
 
