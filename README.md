@@ -56,9 +56,11 @@ We hope to use Kubernetes and containerization to achieve this.
 The [technology service manual](https://www.gov.uk/service-manual/technology) helps us to understand why we focus on
 creating an environment that closely matches production.
 
+---
 > :sparkles: **Do you have questions?**<br>
-> The [Discussions board](https://github.com/ministryofjustice/developer-playground/discussions) is a great place for
-> reaching the community. :smile:
+> The [Discussions board](https://github.com/ministryofjustice/developer-playground/discussions) is a great place to
+> reach the community. :smile:
+---
 
 ## Installation
 
@@ -80,9 +82,11 @@ Nb. *our node container is responsible for compiling project assets, the contain
 long-running process started with `npx mix watch`. Watching our files from a dedicated server is useful in a way that
 detaches the dependency from our development workflow.
 
+---
 > :sparkles: **Do you have questions?**<br>
-> The [Discussions board](https://github.com/ministryofjustice/developer-playground/discussions) is a great place for
-> reaching the community. :smile:
+> The [Discussions board](https://github.com/ministryofjustice/developer-playground/discussions) is a great place to
+> reach the community. :smile:
+---
 
 **A consolidated _up and running_ command.**
 
@@ -121,9 +125,11 @@ Test Driven Development gives us a safety net
 **[What's a container?](https://www.docker.com/resources/what-container/)**<br>
 A resource on Docker describing benefits and use of containers
 
+---
 > :sparkles: **Do you have questions?**<br>
-> The [Discussions board](https://github.com/ministryofjustice/developer-playground/discussions) is a great place for
-> reaching the community. :smile:
+> The [Discussions board](https://github.com/ministryofjustice/developer-playground/discussions) is a great place to
+> reach the community. :smile:
+---
 
 ## Laravel inside...
 
