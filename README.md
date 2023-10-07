@@ -18,7 +18,7 @@
 # Tooling Procurement Centre
 
 The Tooling Procurement Centre (TPC) aggregates data related to tooling within government
-digital teams and display exploratory reports and structured data for administrative review, financial quantification
+digital teams and displays exploratory reports and structured data for administrative review, financial quantification
 and high-confidence decision-making.
 
 ## A note on...
