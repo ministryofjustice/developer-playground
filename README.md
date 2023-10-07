@@ -17,7 +17,7 @@
 
 # Tooling Procurement Centre
 
-The core purpose of the TPC (Tooling Procurement Centre) is to aggregate data related to tooling within government
+The core purpose of the Tooling Procurement Centre (TPC) is to aggregate data related to tooling within government
 digital teams and display exploratory reports and structured data for administrative review, financial quantification
 and high-confidence decision-making.
 
