@@ -17,7 +17,7 @@
 
 # Tooling Procurement Centre
 
-The core purpose of the Tooling Procurement Centre (TPC) is to aggregate data related to tooling within government
+The Tooling Procurement Centre (TPC) aggregates data related to tooling within government
 digital teams and display exploratory reports and structured data for administrative review, financial quantification
 and high-confidence decision-making.
 
@@ -25,16 +25,15 @@ and high-confidence decision-making.
 
 ### Lock files
 
-The Tooling Procurement Centre does not allow `.lock` files in sourcecode. The reason is a difference in
-perception and one that is up for debate.
+The TPC does not allow `.lock` files in sourcecode. The reason is a difference in perception and one that is up for 
+debate.
 
 Imagine our CI environment is ironclad, we have multiple checks firing off in GitHub Actions and every inch of our code
 is monitored by our **T**est **D**riven **D**evelopment (TDD).
-
 In this scenario, why do we deprive ourselves of security updates in package managers? Why do we prevent security
 updates from being installed at the CI stage?
 
-The short answer is, we shouldn't. We should rest assured and feel safe that our CI checks and tests will protect and
+The short answer is, we shouldn't. We should feel safe that our CI checks and TDD will protect and
 inform us, should security updates impact our applications ability to function.
 
 For this reason, we DO NOT push `.lock` files to the repository. We use TDD to it's fullest and allow security updates
@@ -42,7 +41,8 @@ to flow, as and when they are provided.
 
 ### Artisan serve
 
-Laravel comes with a built-in server. It's possible therefore to launch an application locally using this command:
+Laravel comes with a built-in server. It's possible therefore to launch an application locally, although, this is 
+discouraged. However, for completeness, you could use this command to launch a local server:
 
 ```bash
 php artisan serve
@@ -54,7 +54,9 @@ Our goal is
 to [develop in a pre-production environment](https://www.gov.uk/service-manual/technology/working-in-pre-production-environments).
 We hope to use Kubernetes and containerization to achieve this.
 The [technology service manual](https://www.gov.uk/service-manual/technology) helps us to understand why we focus on
-creating an environment that closely matches production.
+creating an environment that closely matches production. 
+
+Using built-in servers like `artisan serve` pulls us away from testing functionality in a production-like environment.
 
 ---
 > :sparkles: **Do you have questions?**<br>
