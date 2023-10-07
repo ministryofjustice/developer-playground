@@ -37,7 +37,7 @@ updates from being installed at the CI stage?
 The short answer is, we shouldn't. We should rest assured and feel safe that our CI checks and tests will protect and
 inform us, should security updates impact our applications ability to function.
 
-For this reason, we DO NOT push `composer.lock` to the repository. We use TDD to it's fullest and allow security updates
+For this reason, we DO NOT push `.lock` files to the repository. We use TDD to it's fullest and allow security updates
 to flow, as and when they are provided.
 
 ### Artisan serve
