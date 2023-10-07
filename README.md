@@ -41,8 +41,8 @@ to flow, as and when they are provided.
 
 ### Artisan serve
 
-Laravel comes with a built-in server. It's possible therefore to launch an application locally, although, this is 
-discouraged. However, for completeness, you could use this command to launch a local server:
+Laravel comes with a built-in server. It's possible therefore to launch an application locally using this, although, 
+this is discouraged. However, for completeness, you could use this command to launch a local server:
 
 ```bash
 php artisan serve
