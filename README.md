@@ -21,6 +21,17 @@ The Tooling Procurement Centre (TPC) aggregates data related to tooling within g
 digital teams and displays exploratory reports and structured data for administrative review, financial quantification
 and high-confidence decision-making.
 
+## Jump to...
+* [A note on...](#a-note-on)
+  * [Lock files](#lock-files)
+  * [Artisan serve](#artisan-serve)
+* [Installation](#installation)
+  * [Useful commands](#useful-commands)
+* [Developing](#developing-the-project)
+  * [Writing tests](#writing-tests-tdd)
+  * [Asset compilation](#asset-compilation)
+  * [Docker](#docker)
+
 ## A note on...
 
 ### Lock files
@@ -114,7 +125,11 @@ docker compose logs node -f
 
 Tests form the foundation of this project and serve as the stability we rely on when deploying to cloud services.
 
-Test Driven Development gives us a safety net
+**Resources**
+
+* [Test Driven Development](https://www.youtube.com/watch?v=1Ur_znd5SNI) with Sam, from Acadia
+* [What is TDD? How it works: Simple Example](https://www.youtube.com/watch?v=UHnP7ThzLpE)
+
 
 ### Asset compilation
 
