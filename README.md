@@ -21,7 +21,9 @@ The core purpose of the TPC (Tooling Procurement Centre) is to aggregate data re
 digital teams and display exploratory reports and structured data for administrative review, financial quantification
 and high-confidence decision-making.
 
-## A note on lock files
+## A note on...
+
+### Lock files
 
 The Tooling Procurement Centre does not allow `.lock` files in sourcecode. The reason is a difference in
 perception and one that is up for debate.
@@ -37,6 +39,26 @@ inform us, should security updates impact our applications ability to function.
 
 For this reason, we DO NOT push `composer.lock` to the repository. We use TDD to it's fullest and allow security updates
 to flow, as and when they are provided.
+
+### Artisan serve
+
+Laravel comes with a built-in server. It's possible therefore to launch an application locally using this command:
+
+```bash
+php artisan serve
+```
+
+B U T &nbsp; W A I T . . .
+
+Our goal is
+to [develop in a pre-production environment](https://www.gov.uk/service-manual/technology/working-in-pre-production-environments).
+We hope to use Kubernetes and containerization to achieve this.
+The [technology service manual](https://www.gov.uk/service-manual/technology) helps us to understand why we focus on
+creating an environment that closely matches production.
+
+> :sparkles: **Do you have questions?**<br>
+> The [Discussions board](https://github.com/ministryofjustice/developer-playground/discussions) is a great place for
+> reaching the community. :smile:
 
 ## Installation
 
@@ -54,9 +76,15 @@ frontend assets. The focus for this project has been, primarily, on creating a f
 6. Asset compilation will take around 2 minutes *
 7. When ready, visit: http://127.0.0.1:8000/
 
-Nb. *our node container is responsible for compiling assets. Compilation can take a couple of minutes to complete.  
+Nb. *our node container is responsible for compiling project assets, the containers' entrypoint command is a
+long-running process started with `npx mix watch`. Watching our files from a dedicated server is useful in a way that
+detaches the dependency from our development workflow.
 
-Once you are happy and understand the installation process, try running this consolidated command
+> :sparkles: **Do you have questions?**<br>
+> The [Discussions board](https://github.com/ministryofjustice/developer-playground/discussions) is a great place for
+> reaching the community. :smile:
+
+**A consolidated _up and running_ command.**
 
 ```bash
 cd ~/ && \
@@ -73,6 +101,29 @@ update when changes are made to any file tracked in `webpack.mix.js`
 ```
 docker compose logs node -f
 ```
+
+## Developing the project
+
+### Writing tests (TDD)
+
+Tests form the foundation of this project and serve as the stability we rely on when deploying to cloud services.
+
+Test Driven Development gives us a safety net
+
+### Asset compilation
+
+[Laravel Mix ~ a wrapper around webpack](https://laravel-mix.com/)
+
+[Laravel Mix ~ documentation](https://laravel-mix.com/docs/6.0/installation)
+
+### Docker
+
+**[What's a container?](https://www.docker.com/resources/what-container/)**<br>
+A resource on Docker describing benefits and use of containers
+
+> :sparkles: **Do you have questions?**<br>
+> The [Discussions board](https://github.com/ministryofjustice/developer-playground/discussions) is a great place for
+> reaching the community. :smile:
 
 ## Laravel inside...
 
