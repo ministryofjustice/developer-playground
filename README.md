@@ -21,7 +21,7 @@ The Tooling Procurement Centre (TPC) aggregates data related to tooling within g
 exploratory reports and structured data for administrative review, financial quantification and high-confidence
 decision-making.
 
-> :exclamation: This is a developer training resource. Unless otherwise stated, it is not hosted or used in a production environment.
+:exclamation: **This is a developer training resource. Unless otherwise stated, it is not hosted or used in a production environment.**
 
 ## Jump to...
 
@@ -37,7 +37,15 @@ decision-making.
     * [Docker](#docker)
     * [Kubernetes](#kubernetes)
 
+---
+
+<div align="center">
+
 ![An image of the applications' home page](https://moj-logos.s3.eu-west-2.amazonaws.com/developer-playground-php-app-shot.png)
+
+</div>
+
+---
 
 ### Inspiration from [Rawkode Academy](https://rawkode.academy/)
 
