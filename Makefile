@@ -10,15 +10,14 @@ setup:
 	@chmod +x ./bin/*
 	@[ -f "./.env" ] || cp .env.example .env
 	@echo "http://127.0.0.1:8080/" > public/hot
-	@docker compose up -d nginx phpmyadmin
+	@docker compose up -d nginx php mariadb phpmyadmin --no-deps
 	@docker compose exec php /var/www/html/bin/setup.sh
 	@./bin/restart.sh
 
 restart:
-	@docker compose down
-	@php artisan notify:restart
+	@docker compose exec php /var/www/html/bin/restart-notice.sh
+	@docker compose down php
 	@make d-compose
-
 
 db-migrate:
 	php artisan db:wipe
