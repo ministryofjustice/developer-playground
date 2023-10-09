@@ -12,8 +12,11 @@ jobs:
       - name: Launch TDD process using PHPUnit
         uses: php-actions/phpunit@v3
         with:
+          version: 9.6
+          php_version: 8.2
           bootstrap: vendor/autoload.php
           configuration: phpunit.xml
+
         env:
           TEST_NAME: TPCentre
           APP_KEY: base64:OdHM33BMcDgmDmdKS+6jvwYdFd9tXHSBet1FYbjaVxI=
