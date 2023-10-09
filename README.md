@@ -17,9 +17,7 @@
 
 # Tooling Procurement Centre
 
-The Tooling Procurement Centre (TPC) aggregates data related to tooling within government
-digital teams and displays exploratory reports and structured data for administrative review, financial quantification
-and high-confidence decision-making.
+The Tooling Procurement Centre (TPC) aggregates data related to tooling within government digital teams and displays exploratory reports and structured data for administrative review, financial quantification and high-confidence decision-making.
 
 ### Inspirational tutorial from Rawkode Academy
 
@@ -43,24 +41,19 @@ and high-confidence decision-making.
 
 ### Lock files
 
-The TPC does not allow `.lock` files in sourcecode. The reason is a difference in perception and one that is up for
-debate.
+The TPC does not allow `.lock` files in source code. The reason is a difference in perception and one that is up for debate.
 
-Imagine our CI environment is ironclad, we have multiple checks firing off in GitHub Actions and every inch of our code
-is monitored by our **T**est **D**riven **D**evelopment (TDD).
-In this scenario, why do we deprive ourselves of security updates in package managers? Why do we prevent security
-updates from being installed at the CI stage?
+Imagine our CI environment is ironclad; we have multiple checks firing off in GitHub Actions, and every inch of our code is monitored by our **T**est **D**riven **D**evelopment (TDD).
+In this scenario, why do we deprive ourselves of security updates in package managers? Why do we prevent security updates from being installed at the CI stage?
 
-The short answer is, we shouldn't. We should feel safe that our CI checks and TDD will protect and
-inform us, should security updates impact our applications ability to function.
+The short answer is we shouldn't. We should feel safe that our CI checks and TDD will protect and inform us should security updates impact our applications' ability to function.
 
-For this reason, we DO NOT push `.lock` files to the repository. We use TDD to it's fullest and allow security updates
-to flow, as and when they are provided.
+For this reason, we DO NOT push `.lock` files to the repository. We use TDD to its fullest and allow security updates to flow as and when they are provided.
 
 ### Artisan serve
 
-Laravel comes with a built-in server. It's possible therefore to launch an application locally using this, although,
-this is discouraged. However, for completeness, you could use this command to launch a local server:
+Laravel comes with a built-in server. It's possible, therefore, to launch an application locally using this, although
+this is discouraged. However, for completeness, you could use this command to establish a local server:
 
 ```bash
 php artisan serve
@@ -86,7 +79,7 @@ Using built-in servers like `artisan serve` pulls us away from testing functiona
 
 The configuration uses multiple Docker containers and volumes to manage ephemeral assets and caching. The view is to
 speed up and strengthen the environment for development. The result is a faster loading time with hot reloading of
-frontend assets. The focus for this project has been, primarily, on creating a fluid development environment.
+frontend assets. The focus for this project has been primarily on creating a fluid development environment.
 
 ***OSX example***
 
@@ -98,9 +91,7 @@ frontend assets. The focus for this project has been, primarily, on creating a f
 6. Asset compilation will take around 2 minutes *
 7. When ready, visit: http://127.0.0.1:8000/
 
-Nb. *our node container is responsible for compiling project assets, the containers' entrypoint command is a
-long-running process started with `npx mix watch`. Watching our files from a dedicated server is useful in a way that
-detaches the dependency from our development workflow.
+Nb. *our node container is responsible for compiling project assets; the containers' [entrypoint](https://docs.docker.com/compose/compose-file/compose-file-v3/#entrypoint) command is a long-running process started with `npx mix watch`. Watching our files from a dedicated server is helpful in a way that detaches the dependency from our development workflow.
 
 ---
 > :sparkles: **Do you have questions?**<br>
@@ -119,8 +110,7 @@ make setup
 
 ### Useful commands
 
-Monitor asset compilation output from the node container. Output is produced by `mix watch`. The terminal view will
-update when changes are made to any file tracked in `webpack.mix.js`
+You can monitor asset compilation output from the node container. Output is produced by `mix watch`. The terminal view will update when changes are made to any file tracked in `webpack.mix.js`
 
 ```
 docker compose logs node -f
@@ -130,14 +120,13 @@ docker compose logs node -f
 
 ### Docker Compose
 
-Docker Compose is used to launch our application locally, we don't use `compose` in production however; we
-use `docker compose` to recreate a production-like environment locally. This section will describe each service.
+Docker Compose is used to launch our application locally; we never use `docker compose` in production; however, we use `docker compose` to recreate production-like environments locally. This section will describe each service.
 
 #### Nginx
 
-This is our webserver.<br>
-Nginx has one job; to serve the our application. Interanlly, the FPM gateway is routed to the application server; `php`.
-In a production environment we would use `localhost`.
+This is our web server.<br>
+Nginx has one job: to serve our application. Internally, the PHP FPM gateway is routed to the application server, `php`.
+In a production environment, we would use `localhost`.
 
 #### PHP
 
@@ -150,7 +139,7 @@ project. All application code can be executed in this container and served via N
 #### MariaDB
 
 This is our database server.<br>
-The php service is `linked` to MariaDB. Under the hood `docker compose` manages the network.
+The php service is `linked` to MariaDB. Under the hood, `docker compose` manages the network.
 
 #### PhpMyAdmin
 
@@ -182,14 +171,13 @@ Tests form the foundation of this project and serve as the stability we rely on 
 Our configuration is located inside `./resources/ops/docker`.
 
 **[What's a container?](https://www.docker.com/resources/what-container/)**<br>
-A resource on Docker describing benefits and use of containers
+A resource on Docker describing the benefits and use of containers
 
 ### Kubernetes
 
 Our configuration is located inside `./resources/ops/kubernetes`. 
 
-If you have a cluster locally, it is possible to launch the application. Configuration may require optimisation but 
-please, do explore the setup.
+Launching the application is possible if you have a cluster locally. Configuration may require optimisation, but please explore the setup.
 
 
 ---
