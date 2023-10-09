@@ -32,9 +32,13 @@ decision-making.
 * [Installation](#installation)
     * [Useful commands](#useful-commands)
 * [Developing](#developing-the-project)
-    * [Docker Compose](#docker-compose)
+    * [Docker compose](#docker-compose)
+      * [Nginx](#nginx)
+      * [PHP](#php)
+      * [Node](#node)
+      * [MariaDB](#mariadb)
+      * [PhpMyAdmin](#phpmyadmin)
     * [Writing tests](#writing-tests-tdd)
-    * [Asset compilation](#asset-compilation)
     * [Docker](#docker)
     * [Kubernetes](#kubernetes)
 
@@ -51,7 +55,8 @@ decision-making.
 ### Inspiration from [Rawkode Academy](https://rawkode.academy/)
 
 Rawkode Academy have cast some inspiration on this project so it's only fair to give them a mention. Please check
-out [David Flanagan](https://www.linkedin.com/in/rawkode/) and his [YouTube channel](https://www.youtube.com/@RawkodeAcademy) if you are interested in learning
+out [David Flanagan](https://www.linkedin.com/in/rawkode/) and
+his [YouTube channel](https://www.youtube.com/@RawkodeAcademy) if you are interested in learning
 about Kubernetes, Cloud Native and DevOps.
 
 :globe_with_meridians: :tv: [Docker, Kubernetes, and PHP: Laravel Edition](https://www.youtube.com/watch?v=CneJf4Amv0U)
@@ -153,26 +158,34 @@ use `docker compose` to recreate production-like environments locally. This sect
 
 #### Nginx
 
-This is our web server.<br>
+**_Our web server._** ([available in the browser](http://127.0.0.1:8000))<br>
 Nginx has one job: to serve our application. Internally, the PHP FPM gateway is routed to the application server, `php`.
-In a production environment, we would use `localhost`.
+In a production environment, we use `localhost`.
 
 #### PHP
 
-This is our application server.<br>
+**_Our application server._**<br>
 We can `docker compose exec` into this container and work alongside our code.
 
 This service detaches a dependency on our host machine. For example, you do not need PHP locally to develop on this
 project. All application code can be executed in this container and served via Nginx.
 
+#### Node
+
+**_Our asset compilation server._**<br>
+We use [Laravel Mix](https://laravel-mix.com/docs/6.0/what-is-mix) for all it's diverse goodness and in true "docker" style we have isolated this task. Production will
+never have to worry about compiling assets, we move them to a service of their own and leave the application server
+doing what it does best.
+
 #### MariaDB
 
-This is our database server.<br>
+**_Our database server._**<br>
 The php service is `linked` to MariaDB. Under the hood, `docker compose` manages the network.
 
 #### PhpMyAdmin
 
-This is our data management utility, available in the browser.
+**_Our visual-data utility._** ([available in the browser](http://127.0.0.1:9191))<br>
+For those times when you simply want to see data the application has stored. This utility also provides search, query and modelling tools.
 
 ---
 > :sparkles: **Do you have questions?**<br>
@@ -188,12 +201,6 @@ Tests form the foundation of this project and serve as the stability we rely on 
 
 * [Test Driven Development](https://www.youtube.com/watch?v=1Ur_znd5SNI) with Sam, from Acadia
 * [What is TDD? How it works: Simple Example](https://www.youtube.com/watch?v=UHnP7ThzLpE)
-
-### Asset compilation
-
-[Laravel Mix ~ a wrapper around webpack](https://laravel-mix.com/)
-
-[Laravel Mix ~ documentation](https://laravel-mix.com/docs/6.0/installation)
 
 ### Docker
 
