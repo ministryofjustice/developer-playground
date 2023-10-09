@@ -17,11 +17,11 @@
 
 # Tooling Procurement Centre
 
-The Tooling Procurement Centre (TPC) aggregates data related to tooling within government digital teams and displays exploratory reports and structured data for administrative review, financial quantification and high-confidence decision-making.
+The Tooling Procurement Centre (TPC) aggregates data related to tooling within government digital teams and displays
+exploratory reports and structured data for administrative review, financial quantification and high-confidence
+decision-making.
 
-### Inspirational tutorial from Rawkode Academy
-
-[Docker, Kubernetes, and PHP: Laravel Edition](https://www.youtube.com/watch?v=CneJf4Amv0U)
+> :exclamation: This is a developer training resource. Unless otherwise stated, it is not hosted or used in a production environment.
 
 ## Jump to...
 
@@ -37,18 +37,33 @@ The Tooling Procurement Centre (TPC) aggregates data related to tooling within g
     * [Docker](#docker)
     * [Kubernetes](#kubernetes)
 
+![An image of the applications' home page](https://moj-logos.s3.eu-west-2.amazonaws.com/developer-playground-php-app-shot.png)
+
+### Inspiration from [Rawkode Academy](https://rawkode.academy/)
+
+Rawkode Academy have cast some inspiration on this project so it's only fair to give them a mention. Please check
+out [David Flanagan](https://www.linkedin.com/in/rawkode/) and his [YouTube channel](https://www.youtube.com/@RawkodeAcademy) if you are interested in learning
+about Kubernetes, Cloud Native and DevOps.
+
+[Docker, Kubernetes, and PHP: Laravel Edition](https://www.youtube.com/watch?v=CneJf4Amv0U)
+
 ## A note on...
 
 ### Lock files
 
-The TPC does not allow `.lock` files in source code. The reason is a difference in perception and one that is up for debate.
+The TPC does not allow `.lock` files in source code. The reason is a difference in perception and one that is up for
+debate.
 
-Imagine our CI environment is ironclad; we have multiple checks firing off in GitHub Actions, and every inch of our code is monitored by our **T**est **D**riven **D**evelopment (TDD).
-In this scenario, why do we deprive ourselves of security updates in package managers? Why do we prevent security updates from being installed at the CI stage?
+Imagine our CI environment is ironclad; we have multiple checks firing off in GitHub Actions, and every inch of our code
+is monitored by our **T**est **D**riven **D**evelopment (TDD).
+In this scenario, why do we deprive ourselves of security updates in package managers? Why do we prevent security
+updates from being installed at the CI stage?
 
-The short answer is we shouldn't. We should feel safe that our CI checks and TDD will protect and inform us should security updates impact our applications' ability to function.
+The short answer is we shouldn't. We should feel safe that our CI checks and TDD will protect and inform us should
+security updates impact our applications' ability to function.
 
-For this reason, we DO NOT push `.lock` files to the repository. We use TDD to its fullest and allow security updates to flow as and when they are provided.
+For this reason, we DO NOT push `.lock` files to the repository. We use TDD to its fullest and allow security updates to
+flow as and when they are provided.
 
 ### Artisan serve
 
@@ -91,7 +106,10 @@ frontend assets. The focus for this project has been primarily on creating a flu
 6. Asset compilation will take around 2 minutes *
 7. When ready, visit: http://127.0.0.1:8000/
 
-Nb. *our node container is responsible for compiling project assets; the containers' [entrypoint](https://docs.docker.com/compose/compose-file/compose-file-v3/#entrypoint) command is a long-running process started with `npx mix watch`. Watching our files from a dedicated server is helpful in a way that detaches the dependency from our development workflow.
+Nb. *our node container is responsible for compiling project assets; the
+containers' [entrypoint](https://docs.docker.com/compose/compose-file/compose-file-v3/#entrypoint) command is a
+long-running process started with `npx mix watch`. Watching our files from a dedicated server is helpful in a way that
+detaches the dependency from our development workflow.
 
 ---
 > :sparkles: **Do you have questions?**<br>
@@ -110,7 +128,8 @@ make setup
 
 ### Useful commands
 
-You can monitor asset compilation output from the node container. Output is produced by `mix watch`. The terminal view will update when changes are made to any file tracked in `webpack.mix.js`
+You can monitor asset compilation output from the node container. Output is produced by `mix watch`. The terminal view
+will update when changes are made to any file tracked in `webpack.mix.js`
 
 ```
 docker compose logs node -f
@@ -120,7 +139,8 @@ docker compose logs node -f
 
 ### Docker Compose
 
-Docker Compose is used to launch our application locally; we never use `docker compose` in production; however, we use `docker compose` to recreate production-like environments locally. This section will describe each service.
+Docker Compose is used to launch our application locally; we never use `docker compose` in production; however, we
+use `docker compose` to recreate production-like environments locally. This section will describe each service.
 
 #### Nginx
 
@@ -175,9 +195,10 @@ A resource on Docker describing the benefits and use of containers
 
 ### Kubernetes
 
-Our configuration is located inside `./resources/ops/kubernetes`. 
+Our configuration is located inside `./resources/ops/kubernetes`.
 
-Launching the application is possible if you have a cluster locally. Configuration may require optimisation, but please explore the setup.
+Launching the application is possible if you have a cluster locally. Configuration may require optimisation, but please
+explore the setup.
 
 
 ---
@@ -220,6 +241,10 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 [PHP Link]: https://github.com/ministryofjustice/developer-playground/tree/php 'Click to view the Laravel application.'
 
 [PHP Icon]: https://badgen.net/badge/PHP/Laravel/fb503b?scale=4&labelColor=484C89&icon=php
+
+<!-- app-shot -->
+
+[App Shot Image]: https://moj-logos.s3.eu-west-2.amazonaws.com/developer-playground-php-app-shot.png
 
 <!-- License -->
 
