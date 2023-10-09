@@ -21,6 +21,10 @@ The Tooling Procurement Centre (TPC) aggregates data related to tooling within g
 digital teams and displays exploratory reports and structured data for administrative review, financial quantification
 and high-confidence decision-making.
 
+### Inspirational tutorial from Rawkode Academy
+
+[Docker, Kubernetes, and PHP: Laravel Edition](https://www.youtube.com/watch?v=CneJf4Amv0U)
+
 ## Jump to...
 
 * [A note on...](#a-note-on)
