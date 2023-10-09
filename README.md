@@ -22,21 +22,24 @@ digital teams and displays exploratory reports and structured data for administr
 and high-confidence decision-making.
 
 ## Jump to...
+
 * [A note on...](#a-note-on)
-  * [Lock files](#lock-files)
-  * [Artisan serve](#artisan-serve)
+    * [Lock files](#lock-files)
+    * [Artisan serve](#artisan-serve)
 * [Installation](#installation)
-  * [Useful commands](#useful-commands)
+    * [Useful commands](#useful-commands)
 * [Developing](#developing-the-project)
-  * [Writing tests](#writing-tests-tdd)
-  * [Asset compilation](#asset-compilation)
-  * [Docker](#docker)
+    * [Docker Compose](#docker-compose)
+    * [Writing tests](#writing-tests-tdd)
+    * [Asset compilation](#asset-compilation)
+    * [Docker](#docker)
+    * [Kubernetes](#kubernetes)
 
 ## A note on...
 
 ### Lock files
 
-The TPC does not allow `.lock` files in sourcecode. The reason is a difference in perception and one that is up for 
+The TPC does not allow `.lock` files in sourcecode. The reason is a difference in perception and one that is up for
 debate.
 
 Imagine our CI environment is ironclad, we have multiple checks firing off in GitHub Actions and every inch of our code
@@ -52,7 +55,7 @@ to flow, as and when they are provided.
 
 ### Artisan serve
 
-Laravel comes with a built-in server. It's possible therefore to launch an application locally using this, although, 
+Laravel comes with a built-in server. It's possible therefore to launch an application locally using this, although,
 this is discouraged. However, for completeness, you could use this command to launch a local server:
 
 ```bash
@@ -65,7 +68,7 @@ Our goal is
 to [develop in a pre-production environment](https://www.gov.uk/service-manual/technology/working-in-pre-production-environments).
 We hope to use Kubernetes and containerization to achieve this.
 The [technology service manual](https://www.gov.uk/service-manual/technology) helps us to understand why we focus on
-creating an environment that closely matches production. 
+creating an environment that closely matches production.
 
 Using built-in servers like `artisan serve` pulls us away from testing functionality in a production-like environment.
 
@@ -121,6 +124,40 @@ docker compose logs node -f
 
 ## Developing the project
 
+### Docker Compose
+
+Docker Compose is used to launch our application locally, we don't use `compose` in production however; we
+use `docker compose` to recreate a production-like environment locally. This section will describe each service.
+
+#### Nginx
+
+This is our webserver.<br>
+Nginx has one job; to serve the our application. Interanlly, the FPM gateway is routed to the application server; `php`.
+In a production environment we would use `localhost`.
+
+#### PHP
+
+This is our application server.<br>
+We can `docker compose exec` into this container and work alongside our code.
+
+This service detaches a dependency on our host machine. For example, you do not need PHP locally to develop on this
+project. All application code can be executed in this container and served via Nginx.
+
+#### MariaDB
+
+This is our database server.<br>
+The php service is `linked` to MariaDB. Under the hood `docker compose` manages the network.
+
+#### PhpMyAdmin
+
+This is our data management utility, available in the browser.
+
+---
+> :sparkles: **Do you have questions?**<br>
+> The [Discussions board](https://github.com/ministryofjustice/developer-playground/discussions) is a great place to
+> reach the community. :smile:
+---
+
 ### Writing tests (TDD)
 
 Tests form the foundation of this project and serve as the stability we rely on when deploying to cloud services.
@@ -130,7 +167,6 @@ Tests form the foundation of this project and serve as the stability we rely on 
 * [Test Driven Development](https://www.youtube.com/watch?v=1Ur_znd5SNI) with Sam, from Acadia
 * [What is TDD? How it works: Simple Example](https://www.youtube.com/watch?v=UHnP7ThzLpE)
 
-
 ### Asset compilation
 
 [Laravel Mix ~ a wrapper around webpack](https://laravel-mix.com/)
@@ -139,8 +175,18 @@ Tests form the foundation of this project and serve as the stability we rely on 
 
 ### Docker
 
+Our configuration is located inside `./resources/ops/docker`.
+
 **[What's a container?](https://www.docker.com/resources/what-container/)**<br>
 A resource on Docker describing benefits and use of containers
+
+### Kubernetes
+
+Our configuration is located inside `./resources/ops/kubernetes`. 
+
+If you have a cluster locally, it is possible to launch the application. Configuration may require optimisation but 
+please, do explore the setup.
+
 
 ---
 > :sparkles: **Do you have questions?**<br>
