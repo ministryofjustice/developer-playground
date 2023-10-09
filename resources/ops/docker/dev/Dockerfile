@@ -1,4 +1,4 @@
-FROM php:8.2-fpm-alpine AS base
+FROM php:8-fpm-alpine AS base
 
 RUN apk add --update bash zlib-dev libpng-dev libzip-dev $PHPIZE_DEPS
 RUN docker-php-ext-install exif
@@ -61,7 +61,7 @@ RUN make test
 ###
 
 
-FROM node:20.8 AS assets-build
+FROM node:20 AS assets-build
 
 WORKDIR /code
 COPY . /code/
