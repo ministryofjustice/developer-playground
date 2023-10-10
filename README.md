@@ -30,8 +30,8 @@ New subprojects can be added by following this process:
 3. [Contact an admin](https://github.com/orgs/ministryofjustice/teams/developer-playground-administrators) giving
    details of the language name and icon URL
 
-> Please note that Developer Playground has rules in place to protect content and users. An administrator is needed to
-> bypass some of these rules to create a new language branch.
+> Please note that Developer Playground has branch-rules in place to protect content and users. An administrator is needed to
+> bypass settings to create a new language branch.
 
 > If you are interested in helping to administer, please do reach out.
 
