@@ -54,10 +54,10 @@ decision-making.
 
 ### Inspiration from [Rawkode Academy](https://rawkode.academy/)
 
-Rawkode Academy have cast some inspiration on this project so it's only fair to give them a mention. Please check
+Rawkode Academy have cast some inspiration on this project so it's only fair to give them a mention. If you are 
+interested in learning about Kubernetes, Cloud Native and DevOps, please check
 out [David Flanagan](https://www.linkedin.com/in/rawkode/) and
-his [YouTube channel](https://www.youtube.com/@RawkodeAcademy) if you are interested in learning
-about Kubernetes, Cloud Native and DevOps.
+his [YouTube channel](https://www.youtube.com/@RawkodeAcademy).
 
 :globe_with_meridians: :tv: [Docker, Kubernetes, and PHP: Laravel Edition](https://www.youtube.com/watch?v=CneJf4Amv0U)
 
