@@ -163,7 +163,7 @@ ruby-apply/my-awesome-new-ruby-branch
 
 [Python Link]: https://github.com/ministryofjustice/developer-playground/tree/python 'Click to view the Python application.'
 
-[Python Icon]: https://badgen.net/badge/Python/%20/FFDE57?scale=2&labelColor=4584B6
+[Python Icon]: https://badgen.net/badge/Python/Django/44B78B?scale=2&labelColor=4584B6
 
 <!-- Node -->
 
