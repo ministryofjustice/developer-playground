@@ -1,0 +1,16 @@
+<%= form_with model: [@article, @article.comments.build] do |form| %>
+<div class="input-group mb-3 w-50">
+  <span class="input-group-text"><%= form.label :body %>
+  </span>
+  <%= form.text_area :body, :class => "form-control", :rows => 8 %>
+</div>
+
+<div class="input-group mb-3 w-25">
+  <span class="input-group-text"><%= form.label :status %>
+  </span>
+  <%= form.select :status, options_for_select(['public', 'private', 'archived']), {}, :class => 'form-select' %>
+</div>
+
+<%= form.submit :class => "btn btn-primary" %>
+
+<% end %>

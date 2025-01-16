@@ -1,0 +1,6 @@
+<%= search_form_for(@q, url: search_path, method: :get) do |f| %>
+<div class="d-flex" role="search">
+	<%= f.search_field :title_or_user_username_cont, placeholder: 'Search', :class => "form-control me-2"  %>
+	<%= f.submit "Search", :class => 'btn btn-outline-primary' %>
+</div>
+<% end %>

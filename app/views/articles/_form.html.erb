@@ -1,0 +1,28 @@
+<%= form_with model: article do |form| %>
+<div class="input-group mb-3 w-50">
+  <span class="input-group-text"><%= form.label :title %>
+  </span>
+  <%= form.text_field :title, :class => "form-control"  %>
+  <% article.errors.full_messages_for(:title).each do |message| %>
+  <div><%= message %></div>
+  <% end %>
+</div>
+
+<div class="input-group mb-3 w-50">
+  <%= form.rich_text_area :body, :class => "form-control", :rows => 10 %>
+  <% article.errors.full_messages_for(:body).each do |message| %>
+  <div><%= message %></div>
+  <% end %>
+</div>
+
+<div class="input-group mb-3 w-25">
+  <span class="input-group-text"><%= form.label :status %>
+  </span>
+  <%= form.select :status, options_for_select(['public', 'private', 'archived']), {}, :class => 'form-select' %>
+</div>
+
+<div class="mb-3">
+  <%= form.submit :class => "btn btn-primary" %>
+</div>
+<% end %>
+
