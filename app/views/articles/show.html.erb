@@ -1,0 +1,33 @@
+<h1 class="display-6"><%= @article.title %></h1>
+
+<div class="card">
+  <div class="card-body">
+    <h6 class="card-subtitle mb-2 text-body-secondary"><%= @article.user.username %> on: <%= @article.created_at.strftime("%d %b %y %H:%M") %> </h6>
+    <p><i><%= pluralize(@article.views, "View") %></i></p>
+    <p class="card-text"><%= sanitize @article.body.html_safe %></p>
+      <% if current_user == @article.user %>
+
+    <ul class="ps-0">
+  <li class="list-unstyled"> <%= link_to "Edit", edit_article_path(@article), :class => "link-primary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover me-3" %>
+    
+    <%= link_to "Delete", article_path(@article), :class => "link-danger link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover",
+    data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+  </li>
+</ul>
+<% end %>
+<p class="timestamp">
+  Updated <%= time_ago_in_words(@article.updated_at) %> ago
+</p>
+  </div>
+</div>
+<br>
+<br>
+<h2><%= pluralize(@article.comments.count, "comment") %></h2>
+<%= render @article.comments %>
+
+<h3>Add a comment</h3>
+<% if user_signed_in? %>
+  <%= render 'comments/form' %>
+<% else %>
+  <%= sanitize flash.now[:notice] = "Please #{link_to 'sign in', new_user_session_path}, or #{link_to 'register', new_user_registration_path } an account to comment.".html_safe %>
+<% end %>

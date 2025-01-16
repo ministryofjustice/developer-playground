@@ -1,0 +1,20 @@
+<h2 class="mb-3">Articles</h2>
+
+<lead><%= present_num_of_articles %></lead>
+
+<ul class="list-group list-group-flush w-50">
+  <% @articles.each do |article| %>
+    <% unless article.archived? %>
+      <li class="list-group-item">
+        <span><%= link_to article.title, article %> by: <%= article.user.username %></span>
+      <span class="badge rounded-pill text-bg-warning">
+        <%= pluralize(article.comments.count, "comment") %>
+      </span>
+      <span class="badge rounded-pill text-bg-warning">
+        <%= pluralize(article.views, "view") %>
+      </span>
+        <span><small><i>Updated <%= time_ago_in_words(article.updated_at) %> ago</i></small></span>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
