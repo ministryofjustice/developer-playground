@@ -15,13 +15,210 @@
 
 </div>
 
-# Installation
 
-## Requirements
+## About The Project
 
-* Docker
+Following the guidance from [Rails getting started](https://guides.rubyonrails.org/getting_started.html#using-a-model-to-interact-with-the-database). This small project functions as a basic application for managing articles. With the ability to comment and use search filters to find content. You can also edit your user details and add an avatar as your profile picture. 
+
+We hope to develop and improve this application as a learning platform for those who love building web applications with Ruby on Rails. 
+
+There are 3 user types: "Admin", "Basic" and "Guest". Each user has different privileges.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
+## Built With
+
+[![Ruby][Rails-badge]][Ruby-on-Rails-url]
+[![Bootstrap][Bootstrap-badge]][Bootstrap-url]
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Current functionality
+
+Article CRUD with comments
+User registration with email verification
+User accounts, admins can also manage all other users 
+
+TODO:
+
+User roles
+- "Admin". Full service access. CRUD all articles. Edit and delete users. Create and delete all comments. 
+
+- "Basic". Create, edit and delete own articles. Delete own comments. Read all articles and comments.
+
+- "Guest". View public articles and comments only. 
+
+
+Tests
+- Full coverage (see Simplecov)
+
+- View spec coverage, although simplecov does not cover view specs by default
+
+- Acceptance tests (capybara?)
+
+
+Users
+- User avatars
+
+Docker
+- Dockerise the application
+
+## Getting Started
+
+The application has a seeds.rb file to create dummy users with article posts and comments. The comments will be posted on the other users articles. 
+
+### Setting up the database:
+
+Create the database with
+
+```sh
+rake db:create
+```
+
+Run migrations
+
+```sh
+rake db:migrate
+```
+
+Seed the database with users with their articles and comments
+
+```sh
+rake db:seed
+```
+
+If any errors occur you can drop the database and follow the above steps again.
+
+```sh
+rake db:drop
+```
+
+### Logging in
+admin user to see full service privileges. 
+```sh
+email: adminuser@email.com
+password: password
+```
+
+basic user. 
+```sh
+email: basicuser@email.com
+password: password
+```
+
+guest user. 
+```sh
+email: guestuser@email.com
+password: password
+```
+
+### Prerequisites
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/[your_username]/rails_blog.git
+   ```
+2. Navigate into the project directory
+   ```sh
+   cd rails_blog 
+   ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+## Usage
+
+### Signing up 
+Sign up to create a user before you can interact with the application. After clicking 'sign up' an authentication token will be displayed within your terminal. Visit the given url to submit the token to verify your user. You MUST do this before you can sign in. 
+
+### User roles
+There are 3 different types of users. "Admin", "Basic" and "Guest". 
+
+Admin can see all posts whether private or public, and can also change the roles of other users. Can write posts and comments. Can edit and delete other users articles and comments.
+
+Basic users can see all posts whether private or public, but cannot modify other users. Can write articles or comments.
+
+Guests can only see public posts and comments. No other functionality.
+
+### Testing and test coverage
+- [Brakeman](https://github.com/presidentbeef/brakeman) checks for code vulnerabilities. This is run within the github workflow test.yml. To see a full breakdown of the scan locally run: ```brakeman```.
+ 
+- [Simplecov](https://github.com/simplecov-ruby/simplecov) runs when a test is executed ```bundle exec rspec```. To see a full breakdown of test coverage run ```open coverage/index.html``` in the root directory.
+
+### Linting and Style
+- [Rubocop](https://gist.github.com/jhass/a5ae80d87f18e53e7b56#file-rubocop-yml) for code style and linting. The ```rubocop.yaml``` config file sets the desired cops. To detect all offences enter the command ```rubocop```. To detect and change offences run ```rubocop -A```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Potential Issues
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+## Known issues
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+## Guides
+
+### Run with bare metal installation
+
+The application can be run using a bare metal installation. 
+
+   ```sh
+   rails s
+   ```
+
+### Run with Docker - NOT YET IMPLEMENTED
+
+The application will be run using Docker for configuration exercises and further development. 
+
+[Docker - Get started](https://docs.docker.com/get-started/)
+You can use this [guide](https://www.youtube.com/watch?v=J7hUHnQtFNo) to create the docker image for the application
+
+## License
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+## Contact
+
+Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+## Acknowledgments
+
+Use this space to list resources you find helpful and would like to give credit to.
+
+* [Choose an Open Source License](https://choosealicense.com)
+* [Img Shields](https://shields.io)
+* https://github.com/othneildrew/Best-README-Template
+* [Rails Getting started](https://guides.rubyonrails.org/getting_started.html)
+* [Rails Odin Project](https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/ruby-on-rails)
+* [Rubocop config](https://gist.github.com/jhass/a5ae80d87f18e53e7b56#file-rubocop-yml)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
+[Bootstrap-badge]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
+[Bootstrap-url]: https://getbootstrap.com
+[Ruby-on-Rails-url]: https://rubyonrails.org
+[Rails-badge]: https://img.shields.io/badge/rails-%23CC0000.svg?style=for-the-badge&logo=ruby-on-rails&logoColor=white
 <!-- Ruby -->
 [Ruby Link]: https://github.com/ministryofjustice/developer-playground/tree/ruby 'Click to view the Ruby on Rails application.'
 [Ruby Icon]: https://badgen.net/badge/Ruby/on%20Rails/D30001?scale=4&labelColor=CC342D&icon=ruby

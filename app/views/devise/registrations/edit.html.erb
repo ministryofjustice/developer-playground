@@ -1,0 +1,91 @@
+<h2 class="mb-3">Edit <%= resource_name.to_s.humanize %> Account Details</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render 'devise/shared/error_messages', resource: resource %>
+
+  <div class="input-group mb-3 w-25">
+    <% if resource.avatar.content_type.in?(%w[image/jpeg image/png image/jpg]) %>
+      <%= image_tag(resource.resize_image) if resource.avatar.attached?%>
+    <% else %>
+      <div class="alert alert-warning" role="alert">
+        No avatar uploaded
+      </div>
+    <% end %>
+  </div>
+  <span class="btn btn-outline-dark btn-file">
+      Upload/Change avatar <%= f.file_field :avatar %>
+    </span>
+  <div class="form-text">(must be PNG, JPEG or JPG format)</div>
+  
+  <hr>
+  
+  <label class="form-label">User details</label>
+
+  <div class="input-group mb-3 w-25">
+    <span class="input-group-text"><%= f.label :role %></span>
+    <%= f.select :role, options_for_select(['guest', 'basic', 'admin'], resource.role), {}, :class => 'form-select', disabled: !current_user.admin? %>
+  </div>
+
+  <div class="input-group mb-3 w-50">
+  <span class="input-group-text"><%= f.label :email %>
+  </span>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "form-control" %>
+    <div class="input-group">
+      <div class="form-text">
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>(Currently waiting confirmation for: "<%= resource.unconfirmed_email %>"</div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="input-group mb-3 w-50">
+  <span class="input-group-text"><%= f.label :username %>
+  </span>
+    <%= f.text_field :username, autofocus: true, autocomplete: "username", :placeholder => "Username", :class => "form-control" %>
+  </div>
+
+  <hr>
+
+  <label class="form-label">User password</label>
+  <div class="input-group mb-3 w-50">
+  <span class="input-group-text"><%= f.label :password %>
+  </span>
+    <%= f.password_field :password, autocomplete: "new-password", :placeholder => "New password", :class => "form-control" %>
+    <% if @minimum_password_length %>
+      <br>
+    <% end %>
+    <div class="input-group">
+      <div class="form-text">(leave blank if you don't want to change it) - <%= @minimum_password_length %> characters
+        minimum
+      </div>
+    </div>
+  </div>
+
+  <div class="input-group mb-3 w-50">
+  <span class="input-group-text"><%= f.label :password_confirmation %>
+  </span>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", :placeholder => "New password confirmation", :class => "form-control" %>
+  </div>
+  
+  <hr>
+
+  <label>Confirm password to save changes</label>
+  <div class="input-group mb-3 w-50">
+  <span class="input-group-text"><%= f.label :current_password %> 
+  </span>
+    <%= f.password_field :current_password, :placeholder => "Current password", :class => "form-control" %>
+    <div class="input-group">
+      <div class="form-text">(we need your current password to confirm your changes)</div>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <%= f.submit "Update", :class => "btn btn-primary" %>
+    <%= link_to "Back", :back, :class => "btn btn-link" %>
+  </div>
+<% end %>
+<hr>
+<div><%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, :class => "btn btn-danger" %>
+</div>
+

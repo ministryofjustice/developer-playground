@@ -1,0 +1,37 @@
+<div class="d-flex flex-column">
+  <% if current_user %>
+  <h1 class="display-3">Hi, <%= current_user.username %></h1>
+  <h1>Welcome to your Dashboard</h1>
+  <% end %>
+
+  <div class="row mt-5">
+    <div class="col-6">
+      <h2>You have authored <%= pluralize(current_user.articles.count, "article")%></h2>
+      <ul class="list-group">
+        <% current_user.articles.each do |article| %>
+        <li class="list-group-item">
+          <span><%= link_to article.title, article %> by: <%= article.user.username %></span>
+          <span class="badge rounded-pill text-bg-warning">
+            <%= pluralize(article.comments.count, "comment") %>
+          </span>
+          <span class="badge rounded-pill text-bg-warning">
+            <%= pluralize(article.views, "view") %>
+          </span>
+          <span><small><i>Updated <%= time_ago_in_words(article.updated_at) %> ago</i></small></span>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="col-6">
+      <h2>You have written <%= pluralize(current_user.comments.count, "comments")%></h2>
+      <ul class="list-group w-75">
+        <% current_user.comments.each do |comment| %>
+        <li class="list-group-item">
+          <%= comment.body %>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

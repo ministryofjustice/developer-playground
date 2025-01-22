@@ -1,0 +1,62 @@
+# Enable necessary RuboCop extensions
+require:
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-factory_bot
+  - rubocop-capybara
+
+# Global settings
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'db/schema.rb' # Exclude auto-generated schema files
+
+inherit_mode:
+  merge:
+    - Exclude
+
+Metrics/MethodLength:
+  Enabled: false
+
+Layout/LineLength:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Rails/I18nLocaleTexts:
+  Enabled: false 
+
+Rails/LexicallyScopedActionFilter:
+  Enabled: false
+
+RSpec/SpecFilePathFormat:
+  Enabled: false
+
+Rails/NotNullColumn:
+  Exclude:
+    - 'db/migrate/*.rb'
+
+Rails:
+  Enabled: true
+
+RSpec:
+  Enabled: true
+  AllCops:
+    Exclude:
+      - 'spec/**/*.rb'
+
+FactoryBot:
+  Enabled: true
+
+Capybara:
+  Enabled: true
