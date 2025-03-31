@@ -40,30 +40,6 @@ Article CRUD with comments
 User registration with email verification
 User accounts, admins can also manage all other users 
 
-TODO:
-
-User roles
-- "Admin". Full service access. CRUD all articles. Edit and delete users. Create and delete all comments. 
-
-- "Basic". Create, edit and delete own articles. Delete own comments. Read all articles and comments.
-
-- "Guest". View public articles and comments only. 
-
-
-Tests
-- Full coverage (see Simplecov)
-
-- View spec coverage, although simplecov does not cover view specs by default
-
-- Acceptance tests (capybara?)
-
-
-Users
-- User avatars
-
-Docker
-- Dockerise the application
-
 ## Getting Started
 
 The application has a seeds.rb file to create dummy users with article posts and comments. The comments will be posted on the other users articles. 
