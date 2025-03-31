@@ -154,6 +154,9 @@ Guests can only see public posts and comments. No other functionality.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Documentation
+The project documentation is stored within the GitHub wiki page. A current WIP which aims to contain design decisions, user stories, UML diagrams, class/module documentation and other useful information.
+
 ## Potential Issues
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
