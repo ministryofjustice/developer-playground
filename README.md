@@ -40,6 +40,10 @@ Article CRUD with comments
 User registration with email verification
 User accounts, admins can also manage all other users 
 
+## Task tracking
+All tasks are tracked on the project Jira board 
+https://rails-blog.atlassian.net/jira/software/projects/RP/boards/1
+
 ## Getting Started
 
 The application has a seeds.rb file to create dummy users with article posts and comments. The comments will be posted on the other users articles. 
