@@ -70,7 +70,6 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'brakeman'
-  gem 'rails_best_practices', '~> 1.23', '>= 1.23.2'
   gem 'rails-erd'
   gem 'reek', '~> 6.5'
   gem 'web-console'
