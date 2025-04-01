@@ -129,8 +129,9 @@ Guests can only see public posts and comments. No other functionality.
  
 - [Simplecov](https://github.com/simplecov-ruby/simplecov) runs when a test is executed ```bundle exec rspec```. To see a full breakdown of test coverage run ```open coverage/index.html``` in the root directory.
 
-### Linting and Style
+### Linting, Style and Code Quality
 - [Rubocop](https://gist.github.com/jhass/a5ae80d87f18e53e7b56#file-rubocop-yml) for code style and linting. The ```rubocop.yaml``` config file sets the desired cops. To detect all offences enter the command ```rubocop```. To detect and change offences run ```rubocop -A```
+- To keep high standards of code quality and to remove any code smells run ```reek [options] [dir_or_source_file]*``` which is a useful tool which examines Ruby classes, modules and methods that provides a report on any found code smells [Reek](https://github.com/troessner/reek). A useful [blog post](https://www.cloudbees.com/blog/how-to-find-ruby-code-smells-with-reek) on using Reek.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
